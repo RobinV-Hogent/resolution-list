@@ -1,6 +1,7 @@
 import { json } from "body-parser";
 import { Router, Request, Response } from "express";
 import { goalRouter } from "./goal-router";
+import { snapshotRouter } from "./snapshot-router";
 
 export const entryRouter: Router = Router();
 
@@ -9,3 +10,4 @@ entryRouter.get('/', (req: Request, res: Response) => {
 });
 
 entryRouter.use('/goals', goalRouter);
+entryRouter.use('/snapshots', snapshotRouter);
